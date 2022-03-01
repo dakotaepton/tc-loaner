@@ -1,0 +1,4 @@
+select Community.ID, NameExternal, REPLACE(OccupEmail, '@students.trinity.wa.edu.au','') AS UserName, CommunityModifiedDate, ModifiedDate, Preferred, Surname 
+from Community, Students 
+where community.id = students.id and EntryDate <= CURRENT_TIMESTAMP 
+order by Surname, Preferred
